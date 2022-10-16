@@ -1,71 +1,42 @@
 <script setup>
 import { inject } from "vue"
 
-const checked      = inject('CHECKED_CLASS')
-const addRollLog   = inject('ADD_ROLL_LOG')
-const setRollClass = inject('SET_ROLL_CLASS')
-const setShowPanel = inject('SET_SHOW_PANEL')
+const { roll } = inject('FUNCTION')
+
 
 function handleRollOnly () {
-  if (checked.size < 2) return alert('请至少选择两个首发职业OvO！')
-  
-  setShowPanel('log')
-
-  let time         = 2000
-  let count        = 0
-  let maxRoll      = 0
-  let maxRollClass = []
-
-  for (let item of checked) {
-    const roll = Math.floor(Math.random() * 100 + 1)
-    const upTime = Math.floor(Math.random() * 3 + 2)
-    if (roll > maxRoll) {
-      maxRoll = roll
-      maxRollClass = [item]
-    } else if (roll === maxRoll) {
-      maxRollClass.push(item)
-    }
-
-    setTimeout(() => {
-      count++
-
-      addRollLog({ class: item, roll })
-
-      if (count >= checked.size) {
-        setRollClass(maxRollClass)
-      }
-    }, time);
-
-    time += upTime * 1000
-  }
-}
-
-function handleRollTen () {
-
+  roll()
 }
 
 </script>
 
 <template>
   <div class="btns-container">
-    <button class="btn-item">
+    <button class="btn-item" @click="handleRollOnly">
       <i class="btn-icon"></i>
-      <span class="btn-text" @click="handleRollOnly">ROLL一次</span>
-    </button>
-    <button class="btn-item">
-      <i class="btn-icon"></i>
-      <span class="btn-text" @click="handleRollTen">ROLL十次</span>
+      <span class="btn-text">R O L L</span>
     </button>
   </div>
 </template>
 
 <style scoped>
+
+@media screen and (min-width: 768px) {
+  .btns-container {
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .btns-container {
+    margin-bottom: 12px;
+  }
+}
+
 .btns-container {
   display: flex;
-  gap: 24px;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
 
 }
 
@@ -86,8 +57,8 @@ function handleRollTen () {
 }
 
 .btns-container .btn-icon {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   display: inline-block;
   background-image: url('../../assets/dice.png');
   background-repeat: no-repeat;

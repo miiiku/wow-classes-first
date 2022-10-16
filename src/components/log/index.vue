@@ -2,18 +2,19 @@
 import { computed, inject, nextTick, ref, watch } from "vue"
 import ClassConfig from '@/constants/class'
 import ClassTag from './tag.vue'
+import BtnTag from './btn.vue'
 
-const rollLog      = inject('ROLL_LOG')
-const rollClass    = inject('ROLL_CLASS')
-const setShowPanel = inject('SET_SHOW_PANEL')
+const { data: rollLog }       = inject('DATA_ROLL_LOG')
+const { data: rollClass }     = inject('DATA_ROLL_CLASS')
+const { switchPanel, reset }  = inject('FUNCTION')
 
 const panelScrollEl = ref(null)
 
 const showResult = computed(() => {
-  return rollClass && rollClass.length
+  return rollClass.value && rollClass.value.length
 })
 
-watch(rollLog, () => {
+watch(rollLog.value, () => {
   nextTick(() => {
     panelScrollEl.value.scrollIntoView({
       behavior: "smooth",
@@ -23,8 +24,13 @@ watch(rollLog, () => {
   })
 })
 
-function handleView () {
-  setShowPanel('result')
+function handleReset () {
+  reset()
+}
+
+function handleGoLink (link) {
+  console.log(link)
+  window.open(link, '_blank')
 }
 
 </script>
@@ -41,11 +47,18 @@ function handleView () {
       </div>
 
       <template v-if="showResult">
-        <div class="console-log__item" v-for="item in rollClass" :key="item">
-          结果已产生：
-          <class-tag :class-key="item" />
-          <div class="link" @click="handleView">点 击 查 看</div>
-        </div>
+        <template v-for="item in rollClass" :key="item">
+          <div class="console-log__item">
+            <div>结果已产生，你的首发职业为：</div>
+            <class-tag :class-key="item" />
+          </div>
+
+          <div class="console-log__item">
+            <btn-tag text="官方介绍" @click="handleGoLink(ClassConfig[item]?.link)" />
+            <btn-tag text="NGA板块" @click="handleGoLink(ClassConfig[item]?.nga)" />
+            <btn-tag text="不算，不算，重来OvO" @click="handleReset" />
+          </div>
+        </template>
       </template>
 
       <div class="hide-el" ref="panelScrollEl"></div>
@@ -54,11 +67,23 @@ function handleView () {
 </template>
 
 <style scoped>
+
+@media screen and (min-width: 768px) {
+  .log-panel {
+    padding: 16px 25px;
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .log-panel {
+    padding: 16px 10px;
+    height: 70vh;
+  }
+}
+
 .log-panel {
   margin: 20px auto;
-  padding: 25px;
-  width: 820px;
-  height: 300px;
   background-color: black;
   border-radius: 4px;
   color: #FFFFFF;
@@ -79,6 +104,7 @@ function handleView () {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .log-panel .console-log__item:not(:first-child) {

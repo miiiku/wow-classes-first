@@ -1,5 +1,4 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -13,7 +12,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   
-  font-family: 'Noto Sans SC', Inter, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: 'Noto Sans SC', Inter, Avenir, Helvetica, Arial, sans-serif; */
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
 }
 
 
@@ -60,4 +60,9 @@ button:focus, button:focus-visible {
   margin: 0;
   width: 100%;
   height: 100%;
+}
+
+:root {
+  --mq-pc : "screen and (min-width: 768px)";
+  --mq-mb : "screen and (max-width: 767px)";
 }

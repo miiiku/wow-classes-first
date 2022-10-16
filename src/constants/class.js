@@ -5,6 +5,7 @@ export default {
     icon: 'https://qiniu.sukoshi.xyz/wow-class/compression/Death%20Knight.png',
     background: 'https://qiniu.sukoshi.xyz/wow-class/compression/Death%20Knight%20Background.png',
     link: 'https://www.wowchina.com/zh-cn/game/classes/death-knight',
+    nga: 'https://bbs.nga.cn/thread.php?fid=320',
   },
   'DemonHunter': {
     title: '恶魔猎手',
@@ -12,6 +13,7 @@ export default {
     icon: 'https://qiniu.sukoshi.xyz/wow-class/compression/Demon%20Hunter.png',
     background: 'https://qiniu.sukoshi.xyz/wow-class/compression/Demon%20Hunter%20Background.png',
     link: 'https://www.wowchina.com/zh-cn/game/classes/demon-hunter',
+    nga: 'https://bbs.nga.cn/thread.php?fid=477',
   },
   'Druid': {
     title: '德鲁伊',
@@ -19,6 +21,7 @@ export default {
     icon: 'https://qiniu.sukoshi.xyz/wow-class/compression/Druid.png',
     background: 'https://qiniu.sukoshi.xyz/wow-class/compression/Druid%20Background.png',
     link: 'https://www.wowchina.com/zh-cn/game/classes/druid',
+    nga: 'https://bbs.nga.cn/thread.php?fid=186',
   },
   'Hunter': {
     title: '猎人',
@@ -26,6 +29,7 @@ export default {
     icon: 'https://qiniu.sukoshi.xyz/wow-class/compression/Hunter.png',
     background: 'https://qiniu.sukoshi.xyz/wow-class/compression/Hunter%20Background.png',
     link: 'https://www.wowchina.com/zh-cn/game/classes/hunter',
+    nga: 'https://bbs.nga.cn/thread.php?fid=187',
   },
   'Mage': {
     title: '法师',
@@ -33,6 +37,7 @@ export default {
     icon: 'https://qiniu.sukoshi.xyz/wow-class/compression/Mage.png',
     background: 'https://qiniu.sukoshi.xyz/wow-class/compression/Mage%20Background.png',
     link: 'https://www.wowchina.com/zh-cn/game/classes/mage',
+    nga: 'https://bbs.nga.cn/thread.php?fid=182',
   },
   'Monk': {
     title: '武僧',
@@ -40,6 +45,7 @@ export default {
     icon: 'https://qiniu.sukoshi.xyz/wow-class/compression/Monk.png',
     background: 'https://qiniu.sukoshi.xyz/wow-class/compression/Monk%20Background.png',
     link: 'https://www.wowchina.com/zh-cn/game/classes/monk',
+    nga: 'https://bbs.nga.cn/thread.php?fid=390',
   },
   'Paladin': {
     title: '圣骑士',
@@ -47,6 +53,7 @@ export default {
     icon: 'https://qiniu.sukoshi.xyz/wow-class/compression/Paladin.png',
     background: 'https://qiniu.sukoshi.xyz/wow-class/compression/Paladin%20Background.png',
     link: 'https://www.wowchina.com/zh-cn/game/classes/paladin',
+    nga: 'https://bbs.nga.cn/thread.php?fid=184',
   },
   'Priest': {
     title: '牧师',
@@ -54,6 +61,7 @@ export default {
     icon: 'https://qiniu.sukoshi.xyz/wow-class/compression/Priest.png',
     background: 'https://qiniu.sukoshi.xyz/wow-class/compression/Priest%20Background.png',
     link: 'https://www.wowchina.com/zh-cn/game/classes/priest',
+    nga: 'https://bbs.nga.cn/thread.php?fid=183',
   },
   'Rogue': {
     title: '潜行者',
@@ -61,6 +69,7 @@ export default {
     icon: 'https://qiniu.sukoshi.xyz/wow-class/compression/Rogue.png',
     background: 'https://qiniu.sukoshi.xyz/wow-class/compression/Rogue%20Background.png',
     link: 'https://www.wowchina.com/zh-cn/game/classes/rogue',
+    nga: 'https://bbs.nga.cn/thread.php?fid=189',
   },
   'Shaman': {
     title: '萨满祭司',
@@ -68,6 +77,7 @@ export default {
     icon: 'https://qiniu.sukoshi.xyz/wow-class/compression/Shaman.png',
     background: 'https://qiniu.sukoshi.xyz/wow-class/compression/Shaman%20Background.png',
     link: 'https://www.wowchina.com/zh-cn/game/classes/shaman',
+    nga: 'https://bbs.nga.cn/thread.php?fid=185',
   },
   'Warlock': {
     title: '术士',
@@ -75,6 +85,7 @@ export default {
     icon: 'https://qiniu.sukoshi.xyz/wow-class/compression/Warlock.png',
     background: 'https://qiniu.sukoshi.xyz/wow-class/compression/Warlock%20Background.png',
     link: 'https://www.wowchina.com/zh-cn/game/classes/warlock',
+    nga: 'https://bbs.nga.cn/thread.php?fid=188',
   },
   'Warrior': {
     title: '战士',
@@ -82,5 +93,6 @@ export default {
     icon: 'https://qiniu.sukoshi.xyz/wow-class/compression/Warrior.png',
     background: 'https://qiniu.sukoshi.xyz/wow-class/compression/Warrior%20Background.png',
     link: 'https://www.wowchina.com/zh-cn/game/classes/warrior',
+    nga: 'https://bbs.nga.cn/thread.php?fid=181',
   }
 }

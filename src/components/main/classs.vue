@@ -2,8 +2,7 @@
 import { computed, inject } from 'vue'
 import ClassConfig from '@/constants/class'
 
-const checked = inject('CHECKED_CLASS')
-const updateChecked = inject('UPDATE_CHECKED_CLASS')
+const { data: checked, set: updateChecked } = inject('DATA_CHECKED_CLASS')
 
 const frameStyle = computed(() => {
   return function (key) {
@@ -38,26 +37,86 @@ const handleClick = (key) => {
 </template>
 
 <style scoped>
+
+@media screen and (min-width: 768px) {
+  .class-container {
+    gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .wow-class-frame {
+    gap: 16px;
+    height: 160px;
+  }
+
+  .wow-class__icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .wow-class__title {
+    width: 110px;
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .class-container {
+    gap: 6px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .wow-class-frame {
+    gap: 6px;
+    height: 86px;
+  }
+
+  .wow-class__icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .wow-class__title {
+    width: 18vw;
+    font-size: 16px;
+  }
+}
 .class-container {
   display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
 }
 
 .wow-class-frame {
   position: relative;
   overflow: hidden;
-  height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   user-select: none;
+}
+
+.wow-class__icon {
+  transition: transform 0.3s ease;
+}
+
+.wow-class__icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-user-drag: none;
+}
+
+.wow-class__title {
+  color: #000000;
+  font-weight: bolder;
+  text-align: left;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
 }
 
 .wow-class-frame.checked .wow-class__checked {
@@ -86,28 +145,5 @@ const handleClick = (key) => {
 
 .wow-class-frame:hover .wow-class__icon {
   transform: scale(1.15);
-}
-
-.wow-class__icon {
-  width: 64px;
-  height: 64px;
-  transition: transform 0.3s ease;
-}
-
-.wow-class__icon img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  -webkit-user-drag: none;
-}
-
-.wow-class__title {
-  width: 110px;
-  color: #000000;
-  font-size: 24px;
-  font-weight: bolder;
-  text-align: left;
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
 }
 </style>
