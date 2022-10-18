@@ -128,6 +128,7 @@ function handleGoLink (link) {
   border-radius: 6px;
   line-height: 32px;
   background-color: aquamarine;
+  color: #333333;
 }
 
 .log-panel .console-log__item .link {
